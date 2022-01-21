@@ -6,7 +6,10 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
 
+
    @OneToOne
+   @JoinColumn (name = "car")
+   @MapsId
    private Car car;
 
    @Id
@@ -21,6 +24,10 @@ public class User {
 
    @Column(name = "email")
    private String email;
+
+   public Car getCar() {
+      return car;
+   }
 
    public User() {}
    
@@ -61,4 +68,9 @@ public class User {
    public void setEmail(String email) {
       this.email = email;
    }
+
+   public void setCar(Car car) {
+      this.car = car;
+   }
+
 }
