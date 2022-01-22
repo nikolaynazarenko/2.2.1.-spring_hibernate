@@ -8,7 +8,6 @@ public class User {
 
 
    @OneToOne
-   @JoinColumn (name = "car")
    @MapsId
    private Car car;
 
@@ -73,4 +72,10 @@ public class User {
       this.car = car;
    }
 
+   @Override
+   public String toString() {
+      return "User{" +
+              "firstName='" + firstName + '\'' +
+              '}';
+   }
 }
